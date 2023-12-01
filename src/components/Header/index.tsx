@@ -40,7 +40,7 @@ const Header = ({
 				{showGroupButton && (
 					<ToolOption>
 						<MaterialCommunityIcons
-							name="chat-plus-outline"
+							name="chat-outline"
 							size={24}
 							color={theme.colors.black}
 						/>

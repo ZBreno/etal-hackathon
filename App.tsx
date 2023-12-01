@@ -10,6 +10,7 @@ import {
 import { theme } from "./src/styles/theme";
 import MyGroups from "./src/screens/MyGroups";
 import CreateGroup from "./src/screens/CreateGroup";
+import GroupChat from "./src/screens/GroupChat";
 import CreatePromotion from "./src/screens/CreatePromotion";
 
 export default function App() {
