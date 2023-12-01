@@ -7,22 +7,25 @@ import {
 	TextTime,
 	TitleProduct,
 	TextDelivery,
+	TextOldPrice,
+	TextNewPrice,
+	ViewContainerComment,
 } from "./styles";
-import { Feather } from "@expo/vector-icons";
+import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "styled-components/native";
 
 export default function Promotion() {
-
 	const theme = useTheme();
-
 	return (
 		<ViewContainer>
 			<ViewContainerProduct>
-				<Image
-					source={require("../../assets/promotions/notebook-product.png")}
-					style={{ width: 115 }}
-					resizeMode="contain"
-				/>
+				<View style={{ justifyContent: "center" }}>
+					<Image
+						source={require("../../assets/promotions/notebook-product.png")}
+						style={{ width: 115 }}
+						resizeMode="contain"
+					/>
+				</View>
 				<View style={{ flex: 1 }}>
 					<View style={{ flexDirection: "row", gap: 8 }}>
 						<View style={{ flexDirection: "row" }}>
@@ -45,39 +48,44 @@ export default function Promotion() {
 						</View>
 
 						<View style={{ flexDirection: "row", gap: 4 }}>
-							<Feather name="clock" size={16} color={theme.black} />
+							<Feather name="clock" size={16} color={theme.colors.black} />
 							<TextTime>Há 10min</TextTime>
 						</View>
 					</View>
-					<TitleProduct>
+					<TitleProduct numberOfLines={2}>
 						Notebook Lenovo Ideapad Flex 5i I7 8gb 256ssd Plac
 					</TitleProduct>
-					<View style={{alignItems: 'flex-start'}}>
-					<TextDelivery>Frete grátis</TextDelivery>
+					<View style={{ alignItems: "flex-start" }}>
+						<TextDelivery>Frete grátis</TextDelivery>
 					</View>
-					<View style={{ flexDirection: "row", gap: 8 }}>
-						<Text>preço antes</Text>
-						<Text>preço depois</Text>
+					<View
+						style={{
+							flexDirection: "row",
+							gap: 8,
+							alignItems: "center",
+							marginTop: 8,
+						}}
+					>
+						<TextOldPrice>R$ 6.372</TextOldPrice>
+						<TextNewPrice>R$ 5.999</TextNewPrice>
 					</View>
 				</View>
 			</ViewContainerProduct>
-			<View
-				style={{
-					flexDirection: "row",
-					justifyContent: "space-between",
-					marginTop: 16,
-				}}
-			>
+			<ViewContainerComment>
 				<View style={{ flexDirection: "row" }}>
-					<Text>icon</Text>
-					<Text>0 comentarios</Text>
+					<MaterialCommunityIcons
+						name="comment-outline"
+						size={20}
+						color={theme.colors.green}
+					/>
+					<TextStore>0 comentários</TextStore>
 				</View>
 				<View style={{ flexDirection: "row", gap: 4 }}>
 					<Text>favoritar</Text>
 					<Text>Curtir</Text>
 					<Text>Ver</Text>
 				</View>
-			</View>
+			</ViewContainerComment>
 		</ViewContainer>
 	);
 }
