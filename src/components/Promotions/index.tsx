@@ -1,5 +1,5 @@
-import { View, Text, Image } from "react-native";
-import React from "react";
+import { View, Text, Image, TouchableOpacity } from "react-native";
+import React, { useState } from "react";
 import {
 	ViewContainer,
 	ViewContainerProduct,
@@ -10,12 +10,23 @@ import {
 	TextOldPrice,
 	TextNewPrice,
 	ViewContainerComment,
+	ButtonFavorite,
+	TextVisualizePromotion,
 } from "./styles";
-import { Feather, MaterialCommunityIcons } from "@expo/vector-icons";
+import {
+	Feather,
+	MaterialCommunityIcons,
+	AntDesign,
+	MaterialIcons,
+} from "@expo/vector-icons";
 import { useTheme } from "styled-components/native";
 
 export default function Promotion() {
 	const theme = useTheme();
+
+	const [favorite, setFavorite] = useState(false);
+	const [like, setLike] = useState(false);
+
 	return (
 		<ViewContainer>
 			<ViewContainerProduct>
@@ -80,10 +91,31 @@ export default function Promotion() {
 					/>
 					<TextStore>0 comentários</TextStore>
 				</View>
-				<View style={{ flexDirection: "row", gap: 4 }}>
-					<Text>favoritar</Text>
-					<Text>Curtir</Text>
-					<Text>Ver</Text>
+				<View style={{ flexDirection: "row", gap: 8 }}>
+					<ButtonFavorite onPress={() => setFavorite(!favorite)}>
+						{favorite ? (
+							<AntDesign name="heart" size={20} color={theme.colors.primary} />
+						) : (
+							<AntDesign name="hearto" size={20} color={theme.colors.black} />
+						)}
+					</ButtonFavorite>
+					<ButtonFavorite onPress={() => setLike(!like)}>
+						{like ? (
+							<AntDesign name="like1" size={20} color={theme.colors.primary} />
+						) : (
+							<AntDesign name="like2" size={20} color={theme.colors.black} />
+						)}
+					</ButtonFavorite>
+					<TouchableOpacity
+						style={{ alignItems: "center", flexDirection: "row", gap: 4 }}
+					>
+						<TextVisualizePromotion>Ver</TextVisualizePromotion>
+						<MaterialIcons
+							name="arrow-forward-ios"
+							size={16}
+							color={theme.colors.primary}
+						/>
+					</TouchableOpacity>
 				</View>
 			</ViewContainerComment>
 		</ViewContainer>
