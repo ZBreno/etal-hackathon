@@ -15,6 +15,7 @@ export const Input = styled.TextInput<{ errorMode?: boolean }>`
 
 export const Container = styled.View`
 	width: 100%;
+	flex-shrink: 1;
 `;
 
 export const InputContainer = styled.View`

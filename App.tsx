@@ -28,9 +28,9 @@ export default function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			{/* <Promotions /> */}
-			{/* <CreateGroup /> */}
+			<CreateGroup />
 			{/* <CreatePromotion /> */}
-			<AnalisyPromotion/>
+			{/* <AnalisyPromotion/> */}
 		</ThemeProvider>
 	);
 }

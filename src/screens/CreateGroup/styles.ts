@@ -12,6 +12,7 @@ export const FormContainer = styled.View`
 	flex-direction: row;
 	gap: 24px;
 	align-items: center;
+	
 `;
 
 export const GroupImage = styled.View`

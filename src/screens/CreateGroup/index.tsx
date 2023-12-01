@@ -1,5 +1,5 @@
-import React from "react";
-import Input from "../../components/Input";
+import React, { useState } from "react";
+import { Input } from "../../components/Input";
 import { Text } from "react-native";
 import Button from "../../components/Button";
 import { FormContainer, GroupImage, Container } from "./styles";
@@ -9,6 +9,8 @@ import Header from "../../components/Header";
 
 const CreateGroup = () => {
 	const theme = useTheme();
+
+	const [groupName, setGroupName] = useState();
 
 	return (
 		<>
