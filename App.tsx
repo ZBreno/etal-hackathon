@@ -1,6 +1,5 @@
 import { ThemeProvider } from "styled-components";
-import Promotions from "./src/screens/Promotions";
-
+import { NavigationContainer } from "@react-navigation/native";
 import {
 	useFonts,
 	Poppins_400Regular,
@@ -8,11 +7,7 @@ import {
 	Poppins_700Bold,
 } from "@expo-google-fonts/poppins";
 import { theme } from "./src/styles/theme";
-import MyGroups from "./src/screens/MyGroups";
-import CreateGroup from "./src/screens/CreateGroup";
-import GroupChat from "./src/screens/GroupChat";
-import CreatePromotion from "./src/screens/CreatePromotion";
-import AnalisyPromotion from "./src/screens/AnalisyPromotion";
+import RootStack from "./src/navigators/RootStack";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -27,10 +22,9 @@ export default function App() {
 
 	return (
 		<ThemeProvider theme={theme}>
-			{/* <Promotions /> */}
-			<CreateGroup />
-			{/* <CreatePromotion /> */}
-			{/* <AnalisyPromotion/> */}
+			<NavigationContainer>
+				<RootStack />
+			</NavigationContainer>
 		</ThemeProvider>
 	);
 }

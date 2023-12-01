@@ -15,6 +15,7 @@ interface GroupItemProps {
 	image: any;
 	lastMessage: string;
 	lastMessageHour: string;
+	onPress?: () => void;
 }
 
 const GroupItem = ({
@@ -22,9 +23,10 @@ const GroupItem = ({
 	image,
 	lastMessage,
 	lastMessageHour,
+	onPress
 }: GroupItemProps) => {
 	return (
-		<Container>
+		<Container onPress={onPress}>
 			<Content>
 				<GroupImage source={image} />
 				<View>

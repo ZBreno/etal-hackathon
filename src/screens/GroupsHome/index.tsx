@@ -3,9 +3,15 @@ import groupPresentation from "./../../assets/images/group-presentation.png";
 import { Container, Subtitle, Title } from "../../styles/globalStyles";
 import Button from "../../components/Button";
 import { ButtonsContainer, GroupPresentationImage } from "./styles";
+import { RootStackParamList } from "../../navigators/RootStack";
+import { StackScreenProps } from "@react-navigation/stack";
 // import { Container } from './styles';
 
-const GroupsHome = () => {
+export type GroupHomeScreenProps = StackScreenProps<
+	RootStackParamList,
+	"GroupsHome"
+>;
+const GroupsHome = ({navigation}: GroupHomeScreenProps) => {
 	return (
 		<Container>
 			<GroupPresentationImage source={groupPresentation} />
@@ -16,8 +22,8 @@ const GroupsHome = () => {
 			</Subtitle>
 
 			<ButtonsContainer>
-				<Button title="Entrar em um grupo" />
-				<Button type="secondary" title="Criar grupo" />
+				<Button title="Entrar em um grupo" onPress={() => navigation.navigate("MyGroups")}/>
+				<Button type="secondary" title="Criar grupo" onPress={() => navigation.navigate("CreateGroup")} />
 			</ButtonsContainer>
 		</Container>
 	);

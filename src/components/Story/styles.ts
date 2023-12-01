@@ -1,8 +1,12 @@
 import styled from "styled-components/native";
 
-export const StoryImage = styled.Image<{ visited: boolean | undefined }>`
+interface StoryImageProps {
+  visited?: boolean;
+}
+
+export const StoryImage = styled.Image<StoryImageProps>`
 	border-radius: 100px;
-	border: 3px solid
+	border: 3px
 		${(props) =>
 			props.visited
 				? props.theme.colors["border-story"]

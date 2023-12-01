@@ -18,6 +18,7 @@ export const Subtitle = styled.Text`
 export const Container = styled.View`
 	padding: 16px;
 	flex: 1;
+	background-color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;

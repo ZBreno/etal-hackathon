@@ -3,8 +3,6 @@ import { TouchableOpacityProps, View } from "react-native";
 import { Container, Title } from "./styles";
 import { useTheme } from "styled-components/native";
 
-// import { Container } from './styles';
-
 interface ButtonProps extends TouchableOpacityProps {
 	title: string;
 	type?: "primary" | "secondary" | "disabled";
