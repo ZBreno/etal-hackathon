@@ -1,13 +1,11 @@
 import styled from "styled-components/native";
 
-const Button = styled.View`
-	/* Adapt the colors based on primary prop */
-	background: ${(props) => props.theme.primary};
-	color: ${(props) => props.theme.primary};
+export const GroupPresentationImage = styled.Image`
+	margin-bottom: 18px;
+`;
 
-	font-size: 1em;
-	margin: 1em;
-	padding: 0.25em 1em;
-	border: 2px solid #bf4f74;
-	border-radius: 3px;
+export const ButtonsContainer = styled.View`
+	width: 100%;
+	gap: 8px;
+	margin-top: 32px;
 `;

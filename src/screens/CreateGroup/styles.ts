@@ -1,13 +1,25 @@
 import styled from "styled-components/native";
 
-const Button = styled.View`
-	/* Adapt the colors based on primary prop */
-	background: ${(props) => props.theme.primary};
-	color: ${(props) => props.theme.primary};
+export const Container = styled.View`
+	flex: 1;
+	align-items: center;
+	justify-content: space-between;
+	padding: 16px;
+`;
 
-	font-size: 1em;
-	margin: 1em;
-	padding: 0.25em 1em;
-	border: 2px solid #bf4f74;
-	border-radius: 3px;
+export const FormContainer = styled.View`
+	width: 100%;
+	flex-direction: row;
+	gap: 24px;
+	align-items: center;
+`;
+
+export const GroupImage = styled.View`
+	width: 80px;
+	height: 80px;
+	border-radius: 180px;
+	border: 0.5px solid ${(props) => props.theme.colors.primary};
+	background-color: ${(props) => props.theme.colors["primary-transparent"]};
+	justify-content: center;
+	align-items: center;
 `;

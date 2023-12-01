@@ -9,9 +9,12 @@ import {
 	TextDelivery,
 } from "./styles";
 import { Feather } from "@expo/vector-icons";
-import { theme } from "../../utils/theme";
+import { useTheme } from "styled-components/native";
 
 export default function Promotion() {
+
+	const theme = useTheme();
+
 	return (
 		<ViewContainer>
 			<ViewContainerProduct>

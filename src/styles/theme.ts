@@ -15,6 +15,7 @@ export const theme = {
 		green: "#189C56",
 		lightgreen: "#DFFAF1",
 	},
+	
 	fonts: {
 		regular: "Poppins_400Regular",
 		medium: "Poppins_500Medium",
