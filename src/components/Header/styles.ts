@@ -27,4 +27,10 @@ export const ToolOption = styled.TouchableOpacity`
 	border-radius: 32px;
 `;
 
+export const BackButton = styled.TouchableOpacity`
+	padding: 8px;
+`;
+
+
+
 export const LogoImage = styled.Image``;

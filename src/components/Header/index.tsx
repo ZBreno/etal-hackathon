@@ -1,11 +1,18 @@
 import React from "react";
-import { View } from "react-native";
-import { Container, LogoImage, ToolOption, ToolsContainer } from "./styles";
+import { Text, TouchableOpacity, View } from "react-native";
+import {
+	BackButton,
+	Container,
+	LogoImage,
+	ToolOption,
+	ToolsContainer,
+} from "./styles";
 import logo from "./../../assets/images/pechinchou-logo.png";
 import {
 	Feather,
 	FontAwesome5,
 	MaterialCommunityIcons,
+	MaterialIcons,
 } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import { useNavigation } from "@react-navigation/native";
@@ -33,6 +40,11 @@ const Header = ({
 	const navigation = useNavigation<MyGroupNavigationProp>();
 	return (
 		<Container>
+			{showBackButton && (
+				<BackButton onPress={() => navigation.goBack()}>
+					<MaterialIcons name="arrow-back" size={24} color={theme.colors.black} />
+				</BackButton>
+			)}
 			{showLogo && <LogoImage source={logo} />}
 			<ToolsContainer>
 				{showNotifications && (
@@ -41,7 +53,7 @@ const Header = ({
 					</ToolOption>
 				)}
 				{showGroupButton && (
-					<ToolOption onPress={() => navigation.navigate('GroupsHome')}>
+					<ToolOption onPress={() => navigation.navigate("GroupsHome")}>
 						<MaterialCommunityIcons
 							name="chat-outline"
 							size={24}
