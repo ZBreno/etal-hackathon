@@ -9,6 +9,7 @@ import Header from "../../components/Header";
 import { StackScreenProps } from "@react-navigation/stack";
 import { RootStackParamList } from "../../navigators/RootStack";
 import { api } from "../../services/api";
+import { useNavigation } from "@react-navigation/native";
 
 export type CreateGroupScreenProps = StackScreenProps<
 	RootStackParamList,
@@ -16,7 +17,6 @@ export type CreateGroupScreenProps = StackScreenProps<
 >;
 const CreateGroup = ({ navigation }: CreateGroupScreenProps) => {
 	const theme = useTheme();
-
 	const [groupName, setGroupName] = useState("");
 
 	const onCreateGroup = async () => {
@@ -25,9 +25,11 @@ const CreateGroup = ({ navigation }: CreateGroupScreenProps) => {
 
 			console.log(response);
 			Alert.alert("Sucesso!", "Seu grupo foi criado");
+			setGroupName("");
+			navigation.goBack();
 		} catch (err) {
 			Alert.alert("Erro", "Não foi possível criar o grupo");
-			console.log();
+			console.log(JSON.stringify(err));
 		}
 	};
 
