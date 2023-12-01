@@ -14,7 +14,7 @@ export type PublishPromotionScreenProps = StackScreenProps<
 	"PublishPromotion"
 >;
 
-export default function PublishPromotion() {
+export default function PublishPromotion({navigation}: PublishPromotionScreenProps) {
 	const theme = useTheme();
 	return (
 		<ScrollView style={{ flex: 1, backgroundColor: 'white' }}>
@@ -52,7 +52,7 @@ export default function PublishPromotion() {
 						<Input placeholder="Cole aqui o link do produto" />
 					</View>
 					<View style={{ alignItems: "flex-end", width: "30%" }}>
-						<Button title="Avançar" />
+						<Button title="Avançar" onPress={() => navigation.navigate('CreatePromotion')}/>
 					</View>
 				</View>
 			</Container>

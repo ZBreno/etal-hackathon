@@ -30,17 +30,17 @@ import Button from "../../components/Button";
 import { Input } from "../../components/Input";
 import { StackScreenProps } from "@react-navigation/stack";
 import { RootStackParamList } from "../../navigators/RootStack";
-export type CreateGroupScreenProps = StackScreenProps<
+export type AnalisyPromotionScreenProps = StackScreenProps<
 	RootStackParamList,
 	"AnalisyPromotions"
 >;
-export default function AnalisyPromotion() {
+export default function AnalisyPromotion({navigation}: AnalisyPromotionScreenProps) {
 	const theme = useTheme();
 	return (
 		<ScrollView style={{ flex: 1 }}>
 			<Header showNotifications showGroupButton showAvatar />
-			<View style={{ padding: 16 }}>
-				<TouchableOpacity>
+			<View style={{ padding: 16, backgroundColor: 'white' }}>
+				<TouchableOpacity onPress={() => navigation.goBack()}>
 					<AntDesign name="close" size={24} color={theme.colors.black} />
 				</TouchableOpacity>
 			</View>
