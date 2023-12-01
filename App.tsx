@@ -10,6 +10,7 @@ import {
 import { theme } from "./src/styles/theme";
 import MyGroups from "./src/screens/MyGroups";
 import CreateGroup from "./src/screens/CreateGroup";
+import CreatePromotion from "./src/screens/CreatePromotion";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -25,7 +26,8 @@ export default function App() {
 	return (
 		<ThemeProvider theme={theme}>
 			{/* <Promotions /> */}
-			<CreateGroup />
+			{/* <CreateGroup /> */}
+			<CreatePromotion />
 		</ThemeProvider>
 	);
 }

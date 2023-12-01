@@ -18,9 +18,10 @@ interface InputProps extends TextInputProps {
 interface SearchInputProps extends TextInputProps {
 	label?: string;
 	error?: boolean;
+	icon?: React.ReactNode;
 }
 
-const Input = ({ label, error, ...props }: InputProps) => {
+export const Input = ({ label, error, ...props }: InputProps) => {
 	return (
 		<Container>
 			{label && <Label errorMode={error}>{label}</Label>}
@@ -29,8 +30,6 @@ const Input = ({ label, error, ...props }: InputProps) => {
 		</Container>
 	);
 };
-
-export default Input;
 // export const PasswordInput = ({ label, style, error, ...props }) => {
 
 //     const [isHidden, setIsHidden] = useState(true);
@@ -78,20 +77,19 @@ export default Input;
 //     );
 // }
 
-const SearchInput = ({ label, style, ...props }: SearchInputProps) => {
-	const theme = useTheme();
-
+export const IconInput = ({ label, style, icon, ...props }: SearchInputProps) => {
 	return (
 		<Container>
 			{label && <Label>{label}</Label>}
 			<InputContainer>
 				<InputStyled {...props} />
 
-				<Ionicons name="search" size={20} color={theme.colors.gray} />
+				{icon}
 			</InputContainer>
 		</Container>
 	);
 };
+
 
 // export const BarCodeInput = ({ label, style, onBarCodePress, ...props }) => {
 // 	return (

@@ -1,6 +1,6 @@
 import styled from "styled-components/native";
 
-export const Container = styled.View<{ backgroundColor: string }>`
+export const Container = styled.TouchableOpacity<{ backgroundColor: string }>`
 	background-color: ${(props) => props.backgroundColor};
 	width: 100%;
 	border-radius: 24px;

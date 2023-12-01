@@ -1,6 +1,6 @@
 export const theme = {
 	colors: {
-		primary: "#CE2C34",
+		primary: "#e02c34",
 		"primary-transparent": "#CE2C3410",
 		background: "#F3F4F6",
 		black: "#353535",
@@ -14,6 +14,8 @@ export const theme = {
 		"text-gray": "#868B8E",
 		green: "#189C56",
 		lightgreen: "#DFFAF1",
+		ligthred: "#fff4f4",
+		"border-story": "#CECECE"
 	},
 	
 	fonts: {
