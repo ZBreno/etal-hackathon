@@ -1,5 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import Promotions from "./src/screens/Promotions";
+import MyGroups from "./src/screens/MyGroups";
 
 export default function App() {
   const theme = {
@@ -17,7 +18,8 @@ export default function App() {
 
   return (
     <ThemeProvider theme={theme}>
-      <Promotions />
+      <MyGroups />
+      {/* <Promotions /> */}
     </ThemeProvider>
   );
 }
