@@ -15,7 +15,9 @@ export const theme = {
 		green: "#189C56",
 		lightgreen: "#DFFAF1",
 		ligthred: "#fff4f4",
-		"border-story": "#CECECE"
+		"border-story": "#CECECE",
+		disabled: "#D0D0D0",
+		textdisabled: "#595959",
 	},
 	
 	fonts: {

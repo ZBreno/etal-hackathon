@@ -12,6 +12,7 @@ import MyGroups from "./src/screens/MyGroups";
 import CreateGroup from "./src/screens/CreateGroup";
 import GroupChat from "./src/screens/GroupChat";
 import CreatePromotion from "./src/screens/CreatePromotion";
+import AnalisyPromotion from "./src/screens/AnalisyPromotion";
 
 export default function App() {
 	const [fontsLoaded] = useFonts({
@@ -28,7 +29,8 @@ export default function App() {
 		<ThemeProvider theme={theme}>
 			{/* <Promotions /> */}
 			{/* <CreateGroup /> */}
-			<CreatePromotion />
+			{/* <CreatePromotion /> */}
+			<AnalisyPromotion/>
 		</ThemeProvider>
 	);
 }

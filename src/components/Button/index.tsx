@@ -7,7 +7,7 @@ import { useTheme } from "styled-components/native";
 
 interface ButtonProps {
 	title: string;
-	type?: "primary" | "secondary";
+	type?: "primary" | "secondary" | "disabled";
 }
 
 const Button = ({ title, type = "primary" }: ButtonProps) => {
@@ -16,11 +16,22 @@ const Button = ({ title, type = "primary" }: ButtonProps) => {
 	return (
 		<Container
 			backgroundColor={
-				type === "primary" ? theme.colors.primary : theme.colors.white
+				type === "primary"
+					? theme.colors.primary
+					: type === "disabled"
+					? theme.colors.disabled
+					: theme.colors.white
 			}
+			disabled={type === "disabled"}
 		>
 			<Title
-				color={type === "primary" ? theme.colors.white : theme.colors.primary}
+				color={
+					type === "primary"
+						? theme.colors.white
+						: type === "disabled"
+						? theme.colors.textdisabled
+						: theme.colors.primary
+				}
 			>
 				{title}
 			</Title>

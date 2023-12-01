@@ -1,6 +1,6 @@
 import React from "react";
 import { View, FlatList, TouchableOpacity, ScrollView } from "react-native";
-import Promotion from "../../components/Promotions";
+import Promotion from "../../components/Promotion";
 import Header from "../../components/Header";
 import Filter from "../../components/Filter";
 import Story from "../../components/Story";
