@@ -35,13 +35,11 @@ export default function HomeTabs() {
 					if (route.name === "Promotions") {
 						iconName = focused ? "dollar" : "dollar";
 						return (
-							<View>
-								<FontAwesome
-									name="dollar"
-									size={24}
-									color={focused ? theme.colors.primary : theme.colors.black}
-								/>
-							</View>
+							<FontAwesome
+								name="dollar"
+								size={24}
+								color={focused ? theme.colors.primary : theme.colors.black}
+							/>
 						);
 					} else if (route.name === "PublishPromotion") {
 						iconName = focused ? "search" : "search-outline";

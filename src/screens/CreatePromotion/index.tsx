@@ -13,14 +13,16 @@ export type CreatePromotionScreenProps = StackScreenProps<
 	RootStackParamList,
 	"CreatePromotion"
 >;
-export default function CreatePromotion() {
+export default function CreatePromotion({
+	navigation,
+}: CreatePromotionScreenProps) {
 	const theme = useTheme();
 	return (
 		<ScrollView style={{ flex: 1 }}>
 			<Header showNotifications showGroupButton showAvatar />
 
 			<Container>
-				<TouchableOpacity>
+				<TouchableOpacity onPress={() => navigation.goBack()}>
 					<AntDesign name="close" size={24} color={theme.colors.black} />
 				</TouchableOpacity>
 
@@ -57,9 +59,16 @@ export default function CreatePromotion() {
 						</TouchableOpacity>
 					</View>
 
-					<Input label="Descrição da promoção*" value="insira o cupom, para ficar o preço da promoção" multiline />
+					<Input
+						label="Descrição da promoção*"
+						value="insira o cupom, para ficar o preço da promoção"
+						multiline
+					/>
 				</View>
-				<Button title="Publicar" />
+				<Button
+					title="Publicar"
+					onPress={() => navigation.navigate("AnalisyPromotions")}
+				/>
 			</Container>
 		</ScrollView>
 	);
