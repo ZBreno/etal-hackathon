@@ -8,7 +8,8 @@ import {
 	MaterialCommunityIcons,
 } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
-
+import { useNavigation } from "@react-navigation/native";
+import { GroupHomeScreenProps } from "../../screens/GroupsHome";
 interface HeaderProps {
 	showBackButton?: boolean;
 	showLogo?: boolean;
@@ -17,6 +18,8 @@ interface HeaderProps {
 	showNotifications?: boolean;
 	children?: React.ReactNode;
 }
+
+type MyGroupNavigationProp = GroupHomeScreenProps["navigation"];
 
 const Header = ({
 	showBackButton = false,
@@ -27,7 +30,7 @@ const Header = ({
 	children,
 }: HeaderProps) => {
 	const theme = useTheme();
-
+	const navigation = useNavigation<MyGroupNavigationProp>();
 	return (
 		<Container>
 			{showLogo && <LogoImage source={logo} />}
@@ -38,7 +41,7 @@ const Header = ({
 					</ToolOption>
 				)}
 				{showGroupButton && (
-					<ToolOption>
+					<ToolOption onPress={() => navigation.navigate('GroupsHome')}>
 						<MaterialCommunityIcons
 							name="chat-outline"
 							size={24}

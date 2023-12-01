@@ -4,6 +4,16 @@ import Promotion from "../../components/Promotion";
 import Header from "../../components/Header";
 import Filter from "../../components/Filter";
 import Story from "../../components/Story";
+import { LogBox } from 'react-native';
+import { StackScreenProps } from "@react-navigation/stack";
+import { RootStackParamList } from "../../navigators/RootStack";
+
+LogBox.ignoreLogs(['']);
+
+export type PromotionsScreenProps = StackScreenProps<
+	RootStackParamList,
+	"Promotions"
+>;
 
 const Promotions = () => {
 

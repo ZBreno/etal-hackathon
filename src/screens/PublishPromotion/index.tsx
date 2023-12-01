@@ -1,4 +1,4 @@
-import { View, Text, Image, Dimensions, TouchableOpacity } from "react-native";
+import { View, ScrollView, Image, Dimensions, TouchableOpacity } from "react-native";
 import React from "react";
 import { Container, ContainerSelected, TextPromotion, TextSelected, TextUnSelected } from "./styles";
 import Header from "../../components/Header";
@@ -6,10 +6,18 @@ import { Input } from "../../components/Input";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import Button from "../../components/Button";
+import { RootStackParamList } from "../../navigators/RootStack";
+import { StackScreenProps } from "@react-navigation/stack";
+
+export type PublishPromotionScreenProps = StackScreenProps<
+	RootStackParamList,
+	"PublishPromotion"
+>;
+
 export default function PublishPromotion() {
 	const theme = useTheme();
 	return (
-		<View style={{ flex: 1 }}>
+		<ScrollView style={{ flex: 1, backgroundColor: 'white' }}>
 			<Header showNotifications showGroupButton showAvatar />
 			<Image
 				source={require("../../assets/promotions/create-promotion.png")}
@@ -48,6 +56,6 @@ export default function PublishPromotion() {
 					</View>
 				</View>
 			</Container>
-		</View>
+		</ScrollView>
 	);
 }

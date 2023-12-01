@@ -19,7 +19,7 @@ export const ContainerSelected = styled.TouchableOpacity`
 	background-color: ${(props) => props.theme.colors.ligthred};
 	padding: 8px;
 	flex-direction: row;
-	gap: 4;
+	gap: 4px;
 	border-radius: 8px;
 	justify-content: center;
 `;

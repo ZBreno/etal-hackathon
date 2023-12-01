@@ -6,6 +6,13 @@ import { AntDesign, Ionicons } from "@expo/vector-icons";
 import { useTheme } from "styled-components";
 import { Input } from "../../components/Input";
 import Button from "../../components/Button";
+import { StackScreenProps } from "@react-navigation/stack";
+import { RootStackParamList } from "../../navigators/RootStack";
+
+export type CreatePromotionScreenProps = StackScreenProps<
+	RootStackParamList,
+	"CreatePromotion"
+>;
 export default function CreatePromotion() {
 	const theme = useTheme();
 	return (

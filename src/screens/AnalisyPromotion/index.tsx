@@ -28,7 +28,12 @@ import {
 import { useTheme } from "styled-components";
 import Button from "../../components/Button";
 import { Input } from "../../components/Input";
-
+import { StackScreenProps } from "@react-navigation/stack";
+import { RootStackParamList } from "../../navigators/RootStack";
+export type CreateGroupScreenProps = StackScreenProps<
+	RootStackParamList,
+	"AnalisyPromotions"
+>;
 export default function AnalisyPromotion() {
 	const theme = useTheme();
 	return (

@@ -8,9 +8,10 @@ import { useTheme } from "styled-components/native";
 interface ButtonProps {
 	title: string;
 	type?: "primary" | "secondary" | "disabled";
+	onPress?: () => void;
 }
 
-const Button = ({ title, type = "primary" }: ButtonProps) => {
+const Button = ({ title, onPress, type = "primary" }: ButtonProps) => {
 	const theme = useTheme();
 
 	return (
@@ -22,6 +23,7 @@ const Button = ({ title, type = "primary" }: ButtonProps) => {
 					? theme.colors.disabled
 					: theme.colors.white
 			}
+			onPress={onPress}
 			disabled={type === "disabled"}
 		>
 			<Title

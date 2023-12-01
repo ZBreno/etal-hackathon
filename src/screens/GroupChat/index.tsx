@@ -14,11 +14,16 @@ import { Ionicons, MaterialIcons } from "@expo/vector-icons";
 import { useTheme } from "styled-components/native";
 import uuid from "react-native-uuid";
 import group1 from "./../../assets/groups/group1.png";
+import { StackScreenProps } from "@react-navigation/stack";
+import { RootStackParamList } from "../../navigators/RootStack";
 // import { Container } from './styles';
 
-const GroupChat = () => {
+export type GroupChatScreenProps = StackScreenProps<
+	RootStackParamList,
+	"GroupChat"
+>;
+const GroupChat = ({ navigation }: GroupChatScreenProps) => {
 	const theme = useTheme();
-	const navigation = undefined;
 
 	const [typedMessage, setTypedMessage] = useState<string>("");
 
@@ -53,7 +58,7 @@ const GroupChat = () => {
 	return (
 		<Container>
 			<Header>
-				<BackButton onPress={() => {}}>
+				<BackButton onPress={() => navigation.goBack()}>
 					<Ionicons name="close" size={20} color={theme.colors.gray} />
 				</BackButton>
 
