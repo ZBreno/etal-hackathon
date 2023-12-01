@@ -1,17 +1,14 @@
 import React from "react";
-import { View } from "react-native";
+import { TouchableOpacityProps, View } from "react-native";
 import { Container, Title } from "./styles";
 import { useTheme } from "styled-components/native";
 
-// import { Container } from './styles';
-
-interface ButtonProps {
+interface ButtonProps extends TouchableOpacityProps {
 	title: string;
 	type?: "primary" | "secondary" | "disabled";
-	onPress?: () => void;
 }
 
-const Button = ({ title, onPress, type = "primary" }: ButtonProps) => {
+const Button = ({ title, type = "primary", ...props }: ButtonProps) => {
 	const theme = useTheme();
 
 	return (
@@ -23,8 +20,8 @@ const Button = ({ title, onPress, type = "primary" }: ButtonProps) => {
 					? theme.colors.disabled
 					: theme.colors.white
 			}
-			onPress={onPress}
 			disabled={type === "disabled"}
+			{...props}
 		>
 			<Title
 				color={
